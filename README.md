@@ -1,16 +1,10 @@
-# ecommerce_flutter_getx
+# 🚴‍♂️ Bike Shopping UI - Flutter & GetX
 
-A new Flutter project.
+Bu proje, Flutter ve GetX kullanılarak geliştirilen bir **bisiklet alışveriş uygulaması tasarımıdır**.
 
-## Getting Started
+## 📱 Ekran Görüntüleri
 
-This project is a starting point for a Flutter application.
+<a><img src="https://github.com/user-attachments/assets/e542e725-c20c-410a-8ca5-ecd410912adb" width="200" /></a>
+<a><img src="https://github.com/user-attachments/assets/a52dd972-607f-40f6-bf54-52f195a777fa" width="200" /></a>
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Design: https://www.figma.com/community/file/1149336740234053658
