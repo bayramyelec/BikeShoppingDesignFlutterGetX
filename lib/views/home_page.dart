@@ -1,5 +1,8 @@
 import 'package:ecommerce_flutter_getx/src/colors.dart';
 import 'package:ecommerce_flutter_getx/src/screen_size.dart';
+import 'package:ecommerce_flutter_getx/widgets/categories_widget.dart';
+import 'package:ecommerce_flutter_getx/widgets/header_widget.dart';
+import 'package:ecommerce_flutter_getx/widgets/products_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -54,7 +57,36 @@ class HomePage extends StatelessWidget {
             fit: BoxFit.fill,
           ),
         ),
+        Positioned.fill(
+          top: ScreenSize.appbarHeight * 0.5,
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: ListView(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              children: [
+                _buildHeader(),
+                const SizedBox(height: 20),
+                _buildCategories(),
+                const SizedBox(height: 20),
+                _buildProducts(),
+              ],
+            ),
+          ),
+        ),
       ],
     );
+  }
+
+  Widget _buildHeader() {
+    return HeaderWidget();
+  }
+
+  Widget _buildCategories() {
+    return CategoriesWidget();
+  }
+
+  Widget _buildProducts() {
+    return ProductsWidget();
   }
 }
