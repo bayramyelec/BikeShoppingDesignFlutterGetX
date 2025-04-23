@@ -76,10 +76,13 @@ class ProductDetailPage extends StatelessWidget {
   }
 
   Widget _buildImage() {
-    return SizedBox(
-      width: double.infinity,
-      height: ScreenSize.screenWidth / 1.5,
-      child: Image.asset(product.imagePath),
+    return Hero(
+      tag: 'image_${product.name}',
+      child: SizedBox(
+        width: double.infinity,
+        height: ScreenSize.screenWidth / 1.5,
+        child: Image.asset(product.imagePath),
+      ),
     );
   }
 

@@ -51,76 +51,76 @@ class ProductsWidget extends StatelessWidget {
       childAspectRatio: 1 / 1.3,
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      children: [
-        for (int i = 0; i < _list.length; i++)
-          GestureDetector(
-            onTap: () {
-              Get.toNamed(AppRoutes.productDetail, arguments: _list[i]);
-            },
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Stack(
-                children: [
-                  BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 500, sigmaY: 500),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.black.withAlpha(150),
-                      ),
+      children: List.generate(_list.length, (i) {
+        return GestureDetector(
+          onTap: () {
+            Get.toNamed(AppRoutes.productDetail, arguments: _list[i]);
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Stack(
+              children: [
+                BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 30, sigmaY: 30),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.black.withAlpha(150),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Hero(
+                          tag: 'image_${_list[i].name}',
+                          child: Image.asset(
+                            'assets/images/$i.png',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(
-                            child: Image.asset(
-                              'assets/images/$i.png',
-                              fit: BoxFit.contain,
+                          Text(
+                            _list[i].categories,
+                            style: TextStyle(
+                              color: Colors.white54,
+                              fontSize: 12,
                             ),
                           ),
-                          const SizedBox(height: 8),
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                _list[i].categories,
-                                style: TextStyle(
-                                  color: Colors.white54,
-                                  fontSize: 12,
-                                ),
-                              ),
-                              Text(
-                                _list[i].name,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              Text(
-                                _list[i].price,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white54,
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ],
+                          Text(
+                            _list[i].name,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                              color: Colors.white,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
+                          ),
+                          Text(
+                            _list[i].price,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white54,
+                              fontSize: 12,
+                            ),
                           ),
                         ],
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-      ],
+        );
+      }),
     );
   }
 }
