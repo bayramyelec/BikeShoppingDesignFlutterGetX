@@ -1,9 +1,14 @@
 import 'package:ecommerce_flutter_getx/routes/app_pages.dart';
 import 'package:ecommerce_flutter_getx/routes/app_routes.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
+  if (defaultTargetPlatform == TargetPlatform.android) {
+    WidgetsFlutterBinding.ensureInitialized();
+    debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+  }
   runApp(const MyApp());
 }
 
