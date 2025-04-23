@@ -14,7 +14,7 @@ class HeaderWidget extends StatelessWidget {
           BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 200, sigmaY: 200),
             child: Container(
-              height: ScreenSize.screenHeight * 0.25,
+              height: ScreenSize.screenHeight * 0.3,
               width: ScreenSize.screenWidth,
               color: Colors.black.withAlpha(75),
             ),
@@ -27,6 +27,7 @@ class HeaderWidget extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset('assets/images/3.png', fit: BoxFit.contain),
                 Text(

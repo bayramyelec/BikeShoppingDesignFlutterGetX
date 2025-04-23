@@ -24,8 +24,8 @@ class CategoriesWidget extends StatelessWidget {
                     controller.changeIndex(i);
                   },
                   child: Container(
-                    width: ScreenSize.screenWidth / 6,
-                    height: ScreenSize.screenWidth / 6,
+                    width: ScreenSize.screenWidth / 6.3,
+                    height: ScreenSize.screenWidth / 6.3,
                     decoration: BoxDecoration(
                       gradient:
                           controller.selectedIndex.value == i
